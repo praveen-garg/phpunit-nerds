@@ -19,6 +19,7 @@ Class Calculator
   	// $this->b = 5;
   }
 
+  // you may want to ignore __construct stuff below, I was trying a way to use and understand multiple constructors
   /*
   function __construct()
   {
@@ -37,14 +38,14 @@ Class Calculator
   {
     $this->a = $arg1;
     $this->b = 5;
-    // echo('__construct with 1 param called: '.$arg1.PHP_EOL);
+    echo('__construct with 1 param called: '.$arg1.PHP_EOL);
   }
 
   function __construct2($arg1,$arg2)
   {
     $this->a = $arg1;
     $this->b = $arg2;
-    // echo('__construct with 2 params called: '.$arg1.','.$arg2.PHP_EOL);
+    echo('__construct with 2 params called: '.$arg1.','.$arg2.PHP_EOL);
   }
 
   */

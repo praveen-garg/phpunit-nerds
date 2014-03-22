@@ -1,8 +1,8 @@
 {
     "name": "Basic",
-    "description": "For unit test demo",
+    "description": "unit test demo",
     "keywords": ["unit test demo"],
-    "homepage": "http://www.github.com/nerdapplabs/phpunit-demo",
+    "homepage": "http://www.github.com/nerdapplabs/phpunit-nerds",
     "license": "",
     "authors": [
         {
