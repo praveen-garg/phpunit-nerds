@@ -12,6 +12,7 @@
 class CalculatorWebTest extends PHPUnit_Extensions_Selenium2TestCase
 {
 
+    // change base url as per yours
     const BASE_URL_FOR_WEB_PAGES = 'http://localhost:8888/phpunit-nerds/src/View/';
     // RIGHT - const works INSIDE of a class definition.
 

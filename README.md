@@ -1,16 +1,25 @@
 ### A basic example, which explains basic logic tests and functional tests, using PHPUnit with selenium.
 
-* Autoloading of classes and namespacing (use: composer install)
-* [Pear install of phpunit] (http://phpunit.de/manual/3.7/en/installation.html#installation.pear)
+* Autoloading of classes and namespacing (use: composer install, it will update vendor directory contents)
+
+> see instructions below, How to install composer
+
+* [Pear install of PHPunit] (http://phpunit.de/manual/3.7/en/installation.html#installation.pear)
 * [Pear install of PHPunit_Selenium] (http://phpunit.de/manual/3.7/en/selenium.html#selenium.installation)
 
-__note:__ I have used [latest selenium jar v 2.40.0] (http://selenium-release.storage.googleapis.com/2.40/selenium-server-standalone-2.40.0.jar)
+__Note:__ I have used [latest selenium jar v 2.40.0] (http://selenium-release.storage.googleapis.com/2.40/selenium-server-standalone-2.40.0.jar)
 
-### Run test using
+### How to run tests:
 
-* For logic tests: phpunit --colors tests/Basic/CalculatorTest.php
-* For functional test using selenium: phpunit tests/Basic/CalculatorWebTest.php
-(view resides in: src/View/cal.php)
+* For logic tests:
+
+> phpunit --colors tests/Basic/CalculatorTest.php
+
+* For functional tests using selenium:
+
+> phpunit tests/Basic/CalculatorWebTest.php
+
+* view resides in: src/View/cal.php for which we wrote functional tests.
 
 > in phpunit.xml, bootstrap="./vendor/autoload.php" attribute specifies where the bootstrap
 > file is located.
@@ -18,12 +27,19 @@ __note:__ I have used [latest selenium jar v 2.40.0] (http://selenium-release.st
 ### installing composer on MAC
 
 > Goto a directory & get composer:
+
 * curl -sS https://getcomposer.org/installer | php -d detect_unicode=Off
+
 > move composer into a bin directory you control:
+
 * sudo mv composer.phar /usr/local/bin/composer
+
 > double check composer works
+
 * composer about
+
 >(optional) Update composer:
+
 * sudo composer self-update
 
 
