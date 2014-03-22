@@ -1,20 +1,35 @@
+### A basic example, which explains basic logic tests and functional tests, using PHPUnit with selenium.
 
-### A basic example, which explains PHPUnit with basic tests.
+* Autoloading of classes and namespacing (use: composer install)
+* [Pear install of phpunit] (http://phpunit.de/manual/3.7/en/installation.html#installation.pear)
+* [Pear install of PHPunit_Selenium] (http://phpunit.de/manual/3.7/en/selenium.html#selenium.installation)
 
-* Autoloading of classes and namespacing
-* [Using Pear install of phpunit] (http://phpunit.de/manual/3.7/en/installation.html#installation.pear)
+__note:__ I have used [latest selenium jar v 2.40.0] (http://selenium-release.storage.googleapis.com/2.40/selenium-server-standalone-2.40.0.jar)
 
+### Run test using
 
-> Run test using
-* phpunit --colors tests/Basic/CalculatorTest.php
+* For logic tests: phpunit --colors tests/Basic/CalculatorTest.php
+* For functional test using selenium: phpunit tests/Basic/CalculatorWebTest.php
+(view resides in: src/View/cal.php)
 
 > in phpunit.xml, bootstrap="./vendor/autoload.php" attribute specifies where the bootstrap
 > file is located.
 
+### installing composer on MAC
 
-TODO:
+> Goto a directory & get composer:
+* curl -sS https://getcomposer.org/installer | php -d detect_unicode=Off
+> move composer into a bin directory you control:
+* sudo mv composer.phar /usr/local/bin/composer
+> double check composer works
+* composer about
+>(optional) Update composer:
+* sudo composer self-update
 
-[How to setup PHPUnit] (http://www.gargpraveen.blogspot.com/)
+
+### TODO:
+
+[Detailed instruction, How to setup PEAR and PHPUnit using PEAR] (http://www.gargpraveen.blogspot.com/)
 
 and lot more! stay tuned ;)
 
