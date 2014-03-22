@@ -1,6 +1,6 @@
 ### A basic example, which explains basic logic tests and functional tests, using PHPUnit with selenium.
 
-* Autoloading of classes and namespacing (use: composer install, it will update vendor directory contents)
+* Autoloading of classes and namespacing (use: composer install, it will update vendor directory contents for autoloading as per PSR-0)
 
 > see instructions below, How to install composer
 
@@ -26,21 +26,21 @@ __Note:__ I have used [latest selenium jar v 2.40.0] (http://selenium-release.st
 
 ### installing composer on MAC
 
-> Goto a directory & get composer:
+* Goto a directory & get composer:
 
-* curl -sS https://getcomposer.org/installer | php -d detect_unicode=Off
+> curl -sS https://getcomposer.org/installer | php -d detect_unicode=Off
 
-> move composer into a bin directory you control:
+* move composer into a bin directory you control:
 
-* sudo mv composer.phar /usr/local/bin/composer
+> sudo mv composer.phar /usr/local/bin/composer
 
-> double check composer works
+* double check composer works
 
-* composer about
+> composer about
 
->(optional) Update composer:
+* (optional) Update composer:
 
-* sudo composer self-update
+> sudo composer self-update
 
 
 ### TODO:
