@@ -5,13 +5,18 @@
 * [Using Pear install of phpunit] (http://phpunit.de/manual/3.7/en/installation.html#installation.pear)
 
 
-> phpunit --colors tests/Basic/CalculatorTest.php
+> Run test using
+* phpunit --colors tests/Basic/CalculatorTest.php
+
 > in phpunit.xml, bootstrap="./vendor/autoload.php" attribute specifies where the bootstrap
 > file is located.
 
-### TODO:
 
-A lot more! stay tuned ;)
+TODO:
+
+[How to setup PHPUnit] (http://www.gargpraveen.blogspot.com/)
+
+and lot more! stay tuned ;)
 
 ### Thank you!
 
