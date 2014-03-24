@@ -94,6 +94,53 @@ class CalculatorWebTest extends PHPUnit_Extensions_Selenium2TestCase
         $element = $this->byClassName('error');
         $this->assertEquals('* b is required and it should be a number.', $element->text());
     }
+
+    // IsNaN -> is not a number
+    public function testValidationIf_A_IsNaN()
+    {
+        $this->url('Cal.php');
+
+        //given
+        $aInput = $this->byName('a');
+        $aInput->value('t');
+        $this->assertEquals('t', $aInput->value());
+
+        $btn = $this->byId('add');
+        //$btn = $this->byId('sub');
+
+        //when
+        $btn->click();
+
+        //span class = error should have: * b is required and it should be a number.
+        $element = $this->byClassName('error');
+        //then
+        $this->assertEquals('* a is required and it should be a number.', $element->text());
+    }
+
+    public function testValidationIf_B_IsNaN()
+    {
+        $this->url('Cal.php');
+
+        //given
+        $aInput = $this->byName('a');
+        $aInput->value('12');
+
+        $bInput = $this->byName('b');
+        $bInput->value('1t');
+        $this->assertEquals('1t', $bInput->value());
+
+        $btn = $this->byId('add');
+        //$btn = $this->byId('sub');
+
+        //when
+        $btn->click();
+
+        //span class = error should have: * a is required and it should be a number.
+        $element = $this->byClassName('error');
+        //then
+        $this->assertEquals('* b is required and it should be a number.', $element->text());
+    }
+
     // Test for operations
     public function testForAddOperation()
     {

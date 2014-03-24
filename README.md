@@ -43,6 +43,25 @@ __Note:__ I have used [latest selenium jar v 2.40.0] (http://selenium-release.st
 > sudo composer self-update
 
 
+### Troubleshooting
+
+if phpunit tests/Basic/CalculatorWebTest.php output says:
+
+> OK, but incomplete or skipped tests!
+
+try
+
+> phpunit --verbose tests/Basic/CalculatorWebTest.php
+
+This should tell you the issue(s); 1 of the possible reason may be:
+
+> The Selenium Server is not active on host localhost at port 4444.
+
+Make sure to run jar so that selenium server listen (in other terminal tab)
+
+> java -jar /usr/local/bin/selenium-server-standalone-2.40.0.jar
+
+
 ### TODO:
 
 [Detailed instruction, How to setup PEAR and PHPUnit using PEAR] (http://www.gargpraveen.blogspot.com/)

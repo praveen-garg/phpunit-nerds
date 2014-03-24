@@ -10,21 +10,21 @@
 
 <?php
 require '../Basic/Calculator.php';
+
 $self_url = $_SERVER["PHP_SELF"];
 $err1 = $err2 = "";
-$result = "";
-$a = $b = "";
+$a = $b = $result = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-  if (empty($_POST["a"]) && !is_numeric($_POST["a"])){
+  if (empty($_POST["a"]) || !is_numeric($_POST["a"])){
     $err1 = "a is required and it should be a number.";
   }
   else{
     $a = $_POST["a"];
   }
 
-  if (empty($_POST["b"]) && !is_numeric($_POST["b"])){
+  if (empty($_POST["b"]) || !is_numeric($_POST["b"])){
     $err2 = "b is required and it should be a number.";
   }
   else {
