@@ -57,9 +57,12 @@ class CalculatorWebTest extends PHPUnit_Extensions_Selenium2TestCase
         $btn = $this->byId('add');
         //$btn = $this->byId('sub');
         $btn->click();
-        //span class = error should have: * a is required and it should be a number.
-        $element = $this->byClassName('error');
-        $this->assertEquals('* a is required and it should be a number.', $element->text());
+        // span class = error should have: * a is required and it should be a number.
+        //$element = $this->byClassName('error');
+        $elements = $this->elements($this->using('css selector')->value('*[class="error"]'));
+        $this->assertEquals(2, count($elements));
+        $this->assertEquals('* a is required and it should be a number.', $elements[0]->text());
+        $this->assertEquals('* b is required and it should be a number.', $elements[1]->text());
     }
 
     public function testValidationIf_A_IsEmpty()
@@ -73,7 +76,7 @@ class CalculatorWebTest extends PHPUnit_Extensions_Selenium2TestCase
         //$btn = $this->byId('sub');
         $btn->click();
 
-        //span class = error should have: * a is required and it should be a number.
+        // span class = error should have: * a is required and it should be a number.
         $element = $this->byClassName('error');
         $this->assertEquals('* a is required and it should be a number.', $element->text());
     }
