@@ -19,6 +19,22 @@ __Note:__ I have used [latest selenium jar v 2.40.0] (http://selenium-release.st
 
 > phpunit tests/Basic/CalculatorWebTest.php
 
+* for all tests, it should be as:
+
+```
+phpunit --colors tests/
+PHPUnit 4.0.12 by Sebastian Bergmann.
+
+Configuration read from phpunit.xml
+
+I............
+
+Time: 38.17 seconds, Memory: 4.75Mb
+
+OK, but incomplete, skipped, or risky tests!
+Tests: 13, Assertions: 23, Incomplete: 1.
+```
+
 * view resides in: src/View/cal.php for which we wrote functional tests.
 
 > in phpunit.xml, bootstrap="./vendor/autoload.php" attribute specifies where the bootstrap
