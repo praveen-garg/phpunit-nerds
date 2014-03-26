@@ -17,14 +17,15 @@ $a = $b = $result = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-  if (empty($_POST["a"]) || !is_numeric($_POST["a"])){
+  // removed use of is_empty, as 0 is considered empty; http://www.php.net/manual/en/function.empty.php
+  if (!isset($_POST["a"]) || !is_numeric($_POST["a"])){
     $err1 = "a is required and it should be a number.";
   }
   else{
     $a = $_POST["a"];
   }
 
-  if (empty($_POST["b"]) || !is_numeric($_POST["b"])){
+  if (!isset($_POST["b"]) || !is_numeric($_POST["b"])){
     $err2 = "b is required and it should be a number.";
   }
   else {
@@ -67,7 +68,8 @@ function filter_inputs($data)
      <span class="error">* <?php echo $err2;?></span>
    <?php } ?>
    <br/>
-   <?php if($result != ""){ ?>
+   <!-- != will not handle 0, so using !== for typesafe comparison  -->
+   <?php if($result !== ""){ ?>
      <b>Result: <span id="result"><?php echo $result;?></span></b>
    <?php } ?>
    <br/>

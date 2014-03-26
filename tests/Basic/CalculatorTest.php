@@ -20,14 +20,20 @@ class CalculatorTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @covers Calculator::__construct
-     * @expectedException Calculator\InvalidArgumentException
+     * @expectedException \InvalidArgumentException
      */
-
-    /*public function testExceptionIsRaisedForInvalidConstructorArguments()
+    public function testExceptionIsRaisedForInvalidConstructorArguments()
     {
-        // $this->markTestSkipped('Exception is raised for invalid constructor arguments.');
-        new Calculator(1);
-    }*/
+        // Stop here and mark this test as incomplete.
+        $this->markTestIncomplete('This test has not been implemented yet.');
+        //$this->markTestSkipped('Exception should be raised for invalid arguments.');
+        //new Calculator(1);
+    }
+    /*
+      You shouldn't test situations (testExceptionIsRaisedForInvalidConstructorArguments), as above test does.
+      A purpose of a unit test is to make sure that a class under test performs according to its "contract",
+      which is its public interface (functions and properties). What you're trying to do is to break the contract. I think, It's out of scope of a unit test,
+    */
 
     /**
 	 * @covers Calculator::__construct
@@ -46,6 +52,8 @@ class CalculatorTest extends \PHPUnit_Framework_TestCase
     public function testAdd(Calculator $c)
     {
         $this->assertEquals(15, $c->add(10, 5));
+        $this->assertEquals(0, $c->add(0, 0));
+        $this->assertEquals(-1, $c->add(0, -1));
     }
 
     /**
@@ -55,6 +63,8 @@ class CalculatorTest extends \PHPUnit_Framework_TestCase
     public function testSub(Calculator $c)
     {
         $this->assertEquals(5, $c->sub(10, 5));
+        $this->assertEquals(0, $c->sub(0, 0));
+        $this->assertEquals(1, $c->sub(0, -1));
     }
 }
 

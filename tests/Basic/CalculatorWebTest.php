@@ -184,6 +184,30 @@ class CalculatorWebTest extends PHPUnit_Extensions_Selenium2TestCase
         // $this->assertEquals('1', $element->text());
 
     }
+    public function testForZero()
+    {
+        $this->url('Cal.php');
+
+        $aInput = $this->byName('a');
+        $aInput->value('0');
+
+        $bInput = $this->byName('b');
+        $bInput->value('0');
+
+
+        $btn = $this->byId('add');
+        $btn->click();
+
+        $element = $this->byId('result');
+        $this->assertEquals('0', $element->text());
+
+        $btn = $this->byId('sub');
+        $btn->click();
+
+        $element = $this->byId('result');
+        $this->assertEquals('0', $element->text());
+
+    }
 
 }
 /**
