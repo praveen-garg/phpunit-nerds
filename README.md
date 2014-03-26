@@ -13,11 +13,15 @@ __Note:__ I have used [latest selenium jar v 2.40.0] (http://selenium-release.st
 
 * For logic tests:
 
-    phpunit --colors tests/Basic/CalculatorTest.php
+```
+phpunit --colors tests/Basic/CalculatorTest.php
+```
 
-* For functional tests using selenium:
+* For functional tests (using selenium):
 
-    phpunit tests/Basic/CalculatorWebTest.php
+```
+phpunit tests/Basic/CalculatorWebTest.php
+```
 
 * for all tests, it should be as:
 
@@ -35,7 +39,7 @@ OK, but incomplete, skipped, or risky tests!
 Tests: 13, Assertions: 23, Incomplete: 1.
 ```
 
-* view resides in: src/View/cal.php for which we wrote functional tests.
+> view resides in: src/View/cal.php for which we wrote functional tests.
 
 > in phpunit.xml, bootstrap="./vendor/autoload.php" attribute specifies where the bootstrap
 > file is located.
@@ -44,30 +48,42 @@ Tests: 13, Assertions: 23, Incomplete: 1.
 
 * Goto a directory & get composer:
 
-    curl -sS https://getcomposer.org/installer | php -d detect_unicode=Off
+```
+curl -sS https://getcomposer.org/installer | php -d detect_unicode=Off
+```
 
 * move composer into a bin directory you control:
 
-    sudo mv composer.phar /usr/local/bin/composer
+```
+sudo mv composer.phar /usr/local/bin/composer
+```
 
 * double check composer works
 
-    composer about
+```
+composer about
+```
 
 * (optional) Update composer:
 
-    sudo composer self-update
+```
+sudo composer self-update
+```
 
 
 ### Troubleshooting
 
 if phpunit tests/Basic/CalculatorWebTest.php output says:
 
-    OK, but incomplete or skipped tests!
+```
+OK, but incomplete or skipped tests!
+```
 
 try
 
-    phpunit --verbose tests/Basic/CalculatorWebTest.php
+```
+phpunit --verbose tests/Basic/CalculatorWebTest.php
+```
 
 This should tell you the issue(s); 1 of the possible reason may be:
 
@@ -75,16 +91,17 @@ This should tell you the issue(s); 1 of the possible reason may be:
 
 Make sure to run jar so that selenium server listen (in other terminal tab)
 
-    java -jar /usr/local/bin/selenium-server-standalone-2.40.0.jar
-
+```
+java -jar /usr/local/bin/selenium-server-standalone-2.40.0.jar
+```
 
 ### TODO:
 
-[Detailed instruction, How to setup PEAR and PHPUnit using PEAR] (http://www.gargpraveen.blogspot.com/)
+[Detailed instruction, How to setup PEAR, PHPUnit] (http://www.gargpraveen.blogspot.com/)
 
 and lot more! stay tuned ;)
 
-Thank you!
+###### Thank you!
 
 [Praveen Garg] (http://www.gargpraveen.blogspot.com/)
 
