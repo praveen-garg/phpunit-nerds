@@ -1,22 +1,19 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<style>
+ <style>
   .error {color: #FF0000;}
-</style>
- <title>Basic Calculator Selenium Test Demo</title>
+ </style>
+ <title>Basic Calculator PHPUnit &amp; Selenium Tests Demo</title>
 </head>
 <body>
-
 <?php
 require '../Basic/Calculator.php';
-
 $self_url = $_SERVER["PHP_SELF"];
 $err1 = $err2 = "";
 $a = $b = $result = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST")
-{
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
   // removed use of is_empty, as 0 is considered empty; http://www.php.net/manual/en/function.empty.php
   if (!isset($_POST["a"]) || !is_numeric($_POST["a"])){
     $err1 = "a is required and it should be a number.";
@@ -33,9 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   }
 
   if($err1 == "" && $err2 == ""){
-
     $c = new Basic\Calculator();
-
     if ($_POST["op"] == '+'){
       $result = $c->add($a, $b);
     }
@@ -53,8 +48,8 @@ function filter_inputs($data)
      return $data;
 }
 ?>
-<h2>Basic Calculator</h2>
-<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+ <h2>Basic Calculator</h2>
+ <form method="POST" action="<?php echo htmlspecialchars($self_url);?>">
    a: <input type="text" name="a" value="<?php echo $a;?>">
    <br/>
    <?php if($err1 != ""){ ?>
@@ -67,17 +62,17 @@ function filter_inputs($data)
    <?php if($err2 != ""){ ?>
      <span class="error">* <?php echo $err2;?></span>
    <?php } ?>
-   <br/>
+
    <!-- != will not handle 0, so using !== for typesafe comparison  -->
    <?php if($result !== ""){ ?>
      <b>Result: <span id="result"><?php echo $result;?></span></b>
    <?php } ?>
+
    <br/>
+
    <input id="add" type="submit" name="op" value="+">
    &nbsp; &nbsp;
    <input id="sub" type="submit" name="op" value="-">
-</form>
-<br/>
-
+ </form>
 </body>
 </html>

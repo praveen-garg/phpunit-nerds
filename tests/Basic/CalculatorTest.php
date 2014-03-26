@@ -12,9 +12,9 @@ namespace Basic;
 // http://stackoverflow.com/questions/15710410/autoloading-classes-in-phpunit-using-composer-and-autoload-php
 
 // No need of require or use, as we are autoloading; see composer.json for autoload stuff :)
-// require 'Calculator.php';
+// require path_to_'Basic/Calculator.php';
 // OR
-// use Basic\Calculator;
+// use Basic\Calculator as Calculator;
 
 class CalculatorTest extends \PHPUnit_Framework_TestCase
 {

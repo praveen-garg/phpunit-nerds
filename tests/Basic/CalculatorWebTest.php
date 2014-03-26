@@ -42,13 +42,14 @@ class CalculatorWebTest extends PHPUnit_Extensions_Selenium2TestCase
          */
 
         // PHPUnit_Extensions_Selenium2TestCase => title
-        $this->assertEquals('Basic Calculator Selenium Test Demo', $this->title());
+        $this->assertEquals('Basic Calculator PHPUnit & Selenium Tests Demo', $this->title());
 
         // PHPUnit_Extensions_SeleniumTestCase => assertTitle
         //$this->assertTitle('Basic Calculator Selenium Test');
 
         // wait, Let me stop mixing things and creating confusion over PHPUnit_Extensions_SeleniumTestCase vs PHPUnit_Extensions_Selenium2TestCase
     }
+
     // Test for validations
     public function testValidationIfBothFieldsAreEmpty()
     {
@@ -182,8 +183,8 @@ class CalculatorWebTest extends PHPUnit_Extensions_Selenium2TestCase
         $this->assertEquals('2', $element->text());
         // try this next line to see, failure ;]
         // $this->assertEquals('1', $element->text());
-
     }
+
     public function testForZero()
     {
         $this->url('Cal.php');
@@ -193,7 +194,6 @@ class CalculatorWebTest extends PHPUnit_Extensions_Selenium2TestCase
 
         $bInput = $this->byName('b');
         $bInput->value('0');
-
 
         $btn = $this->byId('add');
         $btn->click();
@@ -208,7 +208,6 @@ class CalculatorWebTest extends PHPUnit_Extensions_Selenium2TestCase
         $this->assertEquals('0', $element->text());
 
     }
-
 }
 /**
   * on cli use:
